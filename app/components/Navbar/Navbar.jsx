@@ -135,6 +135,7 @@ export default function Navbar() {
               );
             })}
             <a
+              onClick={() => setIsOpen(false)}
               href="#contact"
               className="w-full inline-block text-center py-5 mt-2 dark:bg-neon-green/50 bg-neon-green/30 border border-neon-green/50 px-5 text-white rounded-full text-sm font-semibold hover:bg-neon-green hover:text-black transition-all shadow-lg shadow-emerald-500/30 hover:shadow-emerald-600/60 cursor-pointer"
             >

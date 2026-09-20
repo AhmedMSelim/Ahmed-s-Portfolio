@@ -36,10 +36,10 @@ export default function Contact() {
 
     // 2. تجهيز نص الرسالة
     const textMessage = `New Message from Portfolio Contact Form :
-  Name: ${name}
-  Email: ${email}
-  Subject: ${subject}
-  Message: ${message}`;
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+Message: ${message}`;
 
     const whatsappUrl = `https://wa.me/${myPhone}?text=${encodeURIComponent(textMessage)}`;
     window.open(whatsappUrl, "_blank");
@@ -61,7 +61,7 @@ export default function Contact() {
     {
       icon: <MdEmail size={25} className="text-neon-green" />,
       label: "Email",
-      value: "ahmedmselim@gmail.com",
+      value: "ahmedmselim9@gmail.com",
     },
     {
       icon: <FaPhoneFlip size={25} className="text-neon-violet" />,
