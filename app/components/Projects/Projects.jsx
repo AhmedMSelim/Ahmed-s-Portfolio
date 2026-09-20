@@ -54,7 +54,7 @@ const ProjectCard = ({
           <div className="absolute inset-0 bg-cosmic-black/40 group-hover:bg-cosmic-black/20 transition-colors" />
         </div>
 
-        <div className="absolute inset-0 flex flex-col justify-end p-8 translate-z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-linear-to-t from-cosmic-black via-cosmic-black/60 to-transparent">
+        <div className="absolute inset-0 flex flex-col justify-end p-8 translate-z-20 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 bg-linear-to-t from-cosmic-black via-cosmic-black/60 to-transparent">
           <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
             <span className="text-neon-green text-xs font-bold uppercase tracking-wider">
               {category}
