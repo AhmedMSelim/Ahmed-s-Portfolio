@@ -8,11 +8,6 @@ import WhatsApp from "./components/WhatsApp/WhatsApp";
 export const metadata = {
   title: "Ahmed's Portfolio",
   description: "Ahmed's Portfolio Fronend Developer",
-  icon: [
-    { url: "/assets/portfolio.jpeg" }, // المسار الاحتياطي من مجلد public
-  ],
-  shortcut: ["/assets/portfolio.jpeg"],
-  apple: ["/assets/portfolio.jpeg"],
 };
 
 export default function RootLayout({ children }) {
