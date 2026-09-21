@@ -61,10 +61,10 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="dark:text-neon-green text-green-600 font-semibold text-[13px] tracking-widest text-sm uppercase flex items-center gap-2"
+              className="dark:text-neon-green text-green-600 font-semibold tracking-widest text-sm uppercase flex items-center gap-2"
             >
-              <span className="w-4 h-px bg-green-600" />
-              Creative Developer & UI/UX Expert
+              <span className="w-8 h-px bg-green-600" />
+              Creative Developer
             </motion.div>
           </div>
 
