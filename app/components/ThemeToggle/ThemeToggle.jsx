@@ -6,25 +6,29 @@ import { FaMoon } from "react-icons/fa6";
 import { CgSun } from "react-icons/cg";
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme("dark");
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // تجنب مشاكل الـ Hydration
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted) {
+    return <div className="w-9 h-9" />;
+  }
+
+  const isDark = resolvedTheme === "dark";
 
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="bg-transparent cursor-pointer p-2 transition-all"
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className="bg-transparent cursor-pointer p-2 transition-all flex items-center justify-center"
+      aria-label="Toggle Theme"
     >
-      {theme === "dark" ? (
+      {isDark ? (
         <CgSun size={20} className="text-white hover:animate-spin" />
       ) : (
-        <FaMoon size={20} className="hover:animate-spin" />
+        <FaMoon size={20} className="text-black hover:animate-spin" />
       )}
     </button>
   );

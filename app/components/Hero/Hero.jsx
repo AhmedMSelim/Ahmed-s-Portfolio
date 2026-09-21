@@ -173,7 +173,7 @@ export default function Hero() {
                 )),
               ]}
               <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div className="w-70 h-70 md:w-105 md:h-105 bg-[url('/assets/developer.jpeg')] bg-cover bg-center bg-no-repeat drop-shadow-[0_0_20px_rgba(70,120,40,0.2)] rounded-2xl" />
+                <motion.div className="w-70 h-70 md:w-105 md:h-105 bg-[url('/assets/developer.webp')] bg-cover bg-center bg-no-repeat drop-shadow-[0_0_20px_rgba(70,120,40,0.2)] rounded-2xl" />
               </div>
             </div>
           </div>

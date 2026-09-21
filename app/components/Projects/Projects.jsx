@@ -1,6 +1,6 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { LuExternalLink } from "react-icons/lu";
 
@@ -88,16 +88,29 @@ const ProjectCard = ({
 };
 
 export default function Projects() {
+  const [showAll, setShowAll] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [activeTab, setActiveTab] = useState("All");
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const categories = ["All", "Web App", "UI/UX"];
 
-  const projecs = [
+  const projects = [
     {
       title: "Social Media Application",
       category: "Web App",
       description:
         "SocialHub is a modern social media platform designed to let users connect, interact, and share content seamlessly.",
-      image: "/assets/socialhub.jpg",
+      image: "/assets/socialhub.webp",
       live: "https://social-hub-omega.vercel.app/login",
       git: "https://github.com/AhmedMSelim/SocialHub.git",
     },
@@ -106,7 +119,7 @@ export default function Projects() {
       category: "Web App",
       description:
         "Adasa is a visual media platform designed for showcasing, sharing, and discovering high-quality photography.",
-      image: "/assets/adasa.jpg",
+      image: "/assets/adasa.webp",
       live: "https://adasa-alpha-nine.vercel.app/",
       git: "https://github.com/AhmedMSelim/Adasa.git",
     },
@@ -115,7 +128,7 @@ export default function Projects() {
       category: "Web App",
       description:
         "ContactHub is a simple web application or tool  for managing and organizing contact information.",
-      image: "/assets/contacthub.jpg",
+      image: "/assets/contacthub.webp",
       live: "https://ahmedmselim.github.io/ContactHub/",
       git: "https://github.com/AhmedMSelim/ContactHub.git",
     },
@@ -124,7 +137,7 @@ export default function Projects() {
       category: "Web App",
       description:
         "GameArena is a gaming-related web application or platform repository",
-      image: "/assets/gamearena.jpg",
+      image: "/assets/gamearena.webp",
       live: "https://ahmedmselim.github.io/GameArena/",
       git: "https://github.com/AhmedMSelim/GameArena.git",
     },
@@ -133,7 +146,7 @@ export default function Projects() {
       category: "Web App",
       description:
         "Clarity is a software repository  to provide clean, structured, and straightforward utility solutions.",
-      image: "/assets/clarity.jpg",
+      image: "/assets/clarity.webp",
       live: "https://ahmedmselim.github.io/Clarity/",
       git: "https://github.com/AhmedMSelim/Clarity.git",
     },
@@ -142,7 +155,7 @@ export default function Projects() {
       category: "UI/UX",
       description:
         "The UX Review Blog is a web application repository  to publish and share articles, insights, and reviews related to user experience design.",
-      image: "/assets/ux.jpg",
+      image: "/assets/ux.webp",
       live: "https://ahmedmselim.github.io/The-UX-Review-Blog/",
       git: "https://github.com/AhmedMSelim/The-UX-Review-Blog.git",
     },
@@ -150,8 +163,11 @@ export default function Projects() {
 
   const filteredProjects =
     activeTab === "All"
-      ? projecs
-      : projecs.filter((project) => project.category === activeTab);
+      ? projects
+      : projects.filter((project) => project.category === activeTab);
+
+  const displayedProjects =
+    isMobile && !showAll ? filteredProjects.slice(0, 3) : filteredProjects;
   return (
     <section className="w-full md:w-[95%] px-2 mx-auto md:px-6 pt-20 relative">
       <div className="mx-auto text-center flex flex-col gap-8 mb-16">
@@ -180,7 +196,10 @@ export default function Projects() {
           {categories.map((category, i) => (
             <button
               key={i}
-              onClick={() => setActiveTab(category)}
+              onClick={() => {
+                setActiveTab(category);
+                setShowAll(false); // إعادة إغلاق القائمة عند تغيير القسم
+              }}
               className={`relative px-6 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap cursor-pointer ${activeTab === category ? "text-black dark:text-white" : "text-slate-400 hover:text-white"}`}
             >
               {activeTab === category && (
@@ -198,10 +217,20 @@ export default function Projects() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <AnimatePresence mode="popLayout">
-          {filteredProjects.map((project, i) => (
+          {displayedProjects.map((project, i) => (
             <ProjectCard key={i} {...project} index={i} />
           ))}
         </AnimatePresence>
+        {isMobile && projects.length > 3 && (
+          <div className="text-center mt-8 md:hidden">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="px-6 py-2.5 cursor-pointer rounded-full bg-blue-600 hover:bg-blue-700 text-white font-medium transition-all duration-300 shadow-lg active:scale-95"
+            >
+              {showAll ? "Show Less" : "Show More"}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

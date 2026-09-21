@@ -16,20 +16,20 @@ import { FaBootstrap } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 
-const SkillCircle = ({ percentage, title, icon: Icon, index }) => {
+const SkillCircle = ({ title, icon: Icon, index, color }) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   useEffect(() => {
     if (isInView) {
-      const controls = animate(0, percentage, {
+      const controls = animate(0, 100, {
         duration: 2,
         onUpdate: (value) => setCount(Math.floor(value)),
         ease: "easeOut",
       });
       return () => controls.stop();
     }
-  }, [isInView, percentage]);
+  }, [isInView]);
 
   const radius = 40;
   const circumference = 2 * Math.PI * radius;
@@ -68,12 +68,13 @@ const SkillCircle = ({ percentage, title, icon: Icon, index }) => {
             className="text-neon-green drop-shadow-[0_0_8px_rgba(70,120,40,0.2)]"
           />
         </svg>
-        <div className="absolute group flex flex-col items-center justify-center text-black dark:text-white">
+        <div
+          className={`absolute group flex flex-col items-center justify-center ${color}`}
+        >
           <motion.div
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 2 }}
-            className="hover:text-neon-green transition-colors"
           >
             {Icon}
           </motion.div>
@@ -88,62 +89,78 @@ const SkillCircle = ({ percentage, title, icon: Icon, index }) => {
 
 export default function Skills() {
   const frontend = [
-    { title: "HTML5", percentage: 100, icon: <FaHtml5 size={30} /> },
-    { title: "CSS3", percentage: 100, icon: <IoLogoCss3 size={30} /> },
+    {
+      title: "HTML5",
+      icon: <FaHtml5 size={30} />,
+      color: "text-[#DB4C24]",
+    },
+    {
+      title: "CSS3",
+      icon: <IoLogoCss3 size={30} />,
+      color: "text-[#1579B8]",
+    },
     {
       title: "JavaScript",
-      percentage: 100,
       icon: <IoLogoJavascript size={30} />,
+      color: "text-[#E2CC1C]",
     },
     {
       title: "TypeScript",
-      percentage: 100,
       icon: <SiTypescript size={30} />,
+      color: "text-[#0076C6]",
     },
     {
       title: "Tailwind CSS",
-      percentage: 100,
       icon: <RiTailwindCssFill size={30} />,
+      color: "text-[#16B5B3]",
     },
     {
       title: "Redux",
-      percentage: 100,
       icon: <SiRedux size={30} />,
+      color: "text-[#7248B6]",
     },
-    { title: "React", percentage: 100, icon: <FaReact size={30} /> },
-    { title: "Next.js", percentage: 100, icon: <SiNextdotjs size={30} /> },
+    {
+      title: "React",
+      icon: <FaReact size={30} />,
+      color: "text-[#5ED3F3]",
+    },
+    {
+      title: "Next.js",
+      icon: <SiNextdotjs size={30} />,
+      color: "",
+    },
   ];
 
   const tools = [
     {
       title: "TanStack Query",
-      percentage: 100,
       icon: <SiTanstack size={30} />,
+      color: "text-[#B6D880]",
     },
     {
       title: "RESTful APIs",
-      percentage: 100,
       icon: <AiTwotoneDatabase size={30} />,
+      color: "text-[#445762]",
     },
     {
       title: "Context API",
-      percentage: 100,
       icon: <SiModelcontextprotocol size={30} />,
+      color: "text-[#F7CA58]",
     },
     {
       title: "Bootstrap",
-      percentage: 100,
       icon: <FaBootstrap size={30} />,
+      color: "text-[#8210F5]",
     },
     {
       title: "Git",
-      percentage: 100,
       icon: <FaGitAlt size={30} />,
+      color: "text-[#E84D30]",
     },
     {
       title: "Github",
-      percentage: 100,
       icon: <FaGithub size={30} />,
+      color: "",
     },
   ];
 
