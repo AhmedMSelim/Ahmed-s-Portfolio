@@ -71,7 +71,7 @@ const Card = ({ title, icon, children, description }) => {
       <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
       <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
       <AnimatePresence>
-        {hovered && (
+        {(hovered || show) && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -83,17 +83,17 @@ const Card = ({ title, icon, children, description }) => {
       </AnimatePresence>
       <div className="relative z-20">
         <div
-          className={`text-center group-hover/canvas-card:-translate-y-4 ${show && "canvas-card:-translate-y-4"} absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] group-hover/canvas-card:opacity-0 ${show && "canvas-card:opacity-0"} transition duration-200 w-full  mx-auto flex items-center justify-center`}
+          className={`text-center group-hover/canvas-card:-translate-y-4 ${show && "translate-y-4"} absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] group-hover/canvas-card:opacity-0 ${show && "opacity-0"} transition duration-200 w-full  mx-auto flex items-center justify-center`}
         >
           {icon}
         </div>
         <h2
-          className={`dark:text-white text-3xl opacity-0 group-hover/canvas-card:opacity-100 ${show && "canvas-card:opacity-100"}  relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white ${show && "canvas-card:text-white"} group-hover/canvas-card:-translate-y-2 ${show && "canvas-card:-translate-y-2"} transition duration-200 text-center`}
+          className={`dark:text-white text-3xl opacity-0 group-hover/canvas-card:opacity-100 ${show && "opacity-100"}  relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white ${show && "text-white"} group-hover/canvas-card:-translate-y-2 ${show && "translate-y-2"} transition duration-200 text-center`}
         >
           {title}
         </h2>
         <p
-          className={`dark:text-white text-sm opacity-0 group-hover/canvas-card:opacity-100 ${show && "canvas-card:opacity-100"} relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white ${show && "canvas-card:text-white"} group-hover/canvas-card:-translate-y-2 ${show && "canvas-card:-translate-y-2"} transition duration-200 text-center`}
+          className={`dark:text-white text-sm opacity-0 group-hover/canvas-card:opacity-100 ${show && "opacity-100"} relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white ${show && "text-white"} group-hover/canvas-card:-translate-y-2 ${show && "translate-y-2"} transition duration-200 text-center`}
           style={{ color: "#e4ecff" }}
         >
           {description}
