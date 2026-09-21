@@ -30,12 +30,13 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "#home", ico: <Rocket size={18} /> },
     { name: "Skills", href: "#skills", ico: <User size={18} /> },
-    { name: "Projects", href: "#projects", ico: <Briefcase size={18} /> },
     {
       name: "Approach",
       href: "#approach",
       ico: <GiLuckyFisherman size={18} />,
     },
+    { name: "Projects", href: "#projects", ico: <Briefcase size={18} /> },
+
     { name: "Contact", href: "#contact", ico: <Mail size={18} /> },
   ];
   return (
