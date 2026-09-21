@@ -173,7 +173,7 @@ export default function Projects() {
   const displayedProjects =
     isMobile && !showAll ? filteredProjects.slice(0, 3) : filteredProjects;
   return (
-    <section className="w-full md:w-[95%] px-2 mx-auto md:px-6 relative">
+    <section className="w-full md:w-[95%] px-2 mx-auto pt-20 md:px-6 relative">
       <div className="mx-auto text-center flex flex-col gap-8 mb-16">
         <div>
           <motion.h2
