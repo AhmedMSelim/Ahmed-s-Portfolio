@@ -17,12 +17,24 @@ import { FaGitAlt } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 
 const SkillCircle = ({ title, icon: Icon, index, color }) => {
+  const [isMobile, setIsMobile] = useState(false);
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   useEffect(() => {
     if (isInView) {
-      const controls = animate(0, 100, {
+      const controls = animate(isMobile ? 100 : 0, 100, {
         duration: 2,
         onUpdate: (value) => setCount(Math.floor(value)),
         ease: "easeOut",
@@ -64,7 +76,9 @@ const SkillCircle = ({ title, icon: Icon, index, color }) => {
             strokeDasharray={circumference}
             initial={{ strokeDashoffset: circumference }}
             animate={isInView ? { strokeDashoffset: offset } : {}}
-            transition={{ duration: 2, ease: "easeOut" }}
+            transition={
+              isMobile ? { duration: 0 } : { duration: 2, ease: "easeOut" }
+            }
             className="text-neon-green drop-shadow-[0_0_8px_rgba(70,120,40,0.2)]"
           />
         </svg>
@@ -72,9 +86,9 @@ const SkillCircle = ({ title, icon: Icon, index, color }) => {
           className={`absolute group flex flex-col items-center justify-center ${color}`}
         >
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ delay: 2 }}
+            initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={isMobile ? { delay: 0 } : { delay: 2 }}
           >
             {Icon}
           </motion.div>
