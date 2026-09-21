@@ -52,7 +52,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="min-h-screen items-center justify-center py-20 overflow-hidden"
+      className="min-h-screen items-center justify-center bg-white pt-20 overflow-hidden"
     >
       <div className="w-full md:w-[95%] px-2 mx-auto md:px-6 flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 items-center">
         <div className="flex flex-col gap-6 z-10">

@@ -187,7 +187,7 @@ export default function Skills() {
           viewport={{ once: true }}
           className="text-3xl md:text-5xl font-bold mb-4 text-green-600"
         >
-          My Specialized <span className="text-gradient">Skillset</span>
+          My Specialized Skillset
         </motion.h2>
 
         <motion.p

@@ -1,4 +1,5 @@
 import AnnouncementBar from "./components/AnnouncementBar/AnnouncementBar";
+import Approach from "./components/Approach/Approach";
 import Contact from "./components/Contact/Contact";
 import Hero from "./components/Hero/Hero";
 import Projects from "./components/Projects/Projects";
@@ -15,6 +16,9 @@ export default function Home() {
       </section>
       <section id="skills">
         <Skills />
+      </section>
+      <section id="approach">
+        <Approach />
       </section>
       <section id="projects">
         <Projects />
