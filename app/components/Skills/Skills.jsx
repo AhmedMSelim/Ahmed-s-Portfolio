@@ -179,7 +179,7 @@ export default function Skills() {
   ];
 
   return (
-    <section className="w-full md:w-[95%] px-2 mx-auto md:px-6 pt-20 relative">
+    <section className="w-full md:w-[95%] px-2 mx-auto md:px-6 relative">
       <div className="mb-16 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

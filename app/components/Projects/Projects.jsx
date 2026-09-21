@@ -15,7 +15,6 @@ const ProjectCard = ({
 }) => {
   const cardRef = useRef(null);
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
-  const [isOpen, setIsOpen] = useState(false);
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
@@ -56,11 +55,10 @@ const ProjectCard = ({
         </div>
 
         <div
-          onClick={() => setIsOpen(!isOpen)}
-          className={`absolute inset-0 flex flex-col justify-end p-8 translate-z-20 opacity-0 group-hover:opacity-100 ${isOpen && "opacity-100"} transition-opacity duration-300 bg-linear-to-t from-cosmic-black via-cosmic-black/60 to-transparent`}
+          className={`absolute inset-0 flex flex-col justify-end p-8 translate-z-20 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-linear-to-t from-cosmic-black via-cosmic-black/60 to-transparent`}
         >
           <div
-            className={`transform translate-y-4 group-hover:translate-y-0 ${isOpen && "translate-y-0"} transition-transform duration-300`}
+            className={`transform md:translate-y-4 group-hover:translate-y-0 transition-transform duration-300`}
           >
             <span className="text-neon-green text-xs font-bold uppercase tracking-wider">
               {category}
@@ -175,7 +173,7 @@ export default function Projects() {
   const displayedProjects =
     isMobile && !showAll ? filteredProjects.slice(0, 3) : filteredProjects;
   return (
-    <section className="w-full md:w-[95%] px-2 mx-auto md:px-6 pt-20 relative">
+    <section className="w-full md:w-[95%] px-2 mx-auto md:px-6 relative">
       <div className="mx-auto text-center flex flex-col gap-8 mb-16">
         <div>
           <motion.h2
@@ -204,7 +202,7 @@ export default function Projects() {
               key={i}
               onClick={() => {
                 setActiveTab(category);
-                setShowAll(false); // إعادة إغلاق القائمة عند تغيير القسم
+                setShowAll(false);
               }}
               className={`relative px-6 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap cursor-pointer ${activeTab === category ? "text-black dark:text-white" : "text-slate-400 hover:text-white"}`}
             >

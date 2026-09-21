@@ -10,7 +10,7 @@ import { FaPhoneFlip } from "react-icons/fa6";
 
 export default function Home() {
   return (
-    <div className="w-full flex flex-col gap-20 pt-20 md:gap-40">
+    <div className="w-full flex flex-col gap-20 pt-20 md:gap-20">
       <section id="home">
         <Hero />
       </section>
