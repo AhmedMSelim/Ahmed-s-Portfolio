@@ -64,7 +64,7 @@ const Card = ({ title, icon, children, description }) => {
       onClick={() => setShow(!show)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border bg-green-300 dark:bg-transparent border-black/20 group/canvas-card flex items-center justify-center dark:border-white/20  max-w-sm w-full mx-auto p-4 relative lg:h-100 rounded-3xl"
+      className="border bg-gray-400 dark:bg-transparent border-black/20 group/canvas-card flex items-center justify-center dark:border-white/20  max-w-sm w-full mx-auto p-4 relative lg:h-100 rounded-3xl"
     >
       <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
