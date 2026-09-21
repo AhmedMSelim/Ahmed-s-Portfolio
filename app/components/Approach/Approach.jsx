@@ -37,7 +37,7 @@ export default function Approach() {
           />
         </Card>
         <Card
-          title="Developmebt & Progress Update"
+          title="Development & Progress Update"
           icon={<AceternityIcon order="Phase 2" />}
           description="Once we agree on the plane, From initial sketches to polished code, I keep you update every step of the way."
         >
@@ -57,7 +57,7 @@ export default function Approach() {
           icon={<AceternityIcon order="Phase 3" />}
           description="This is where the magic happens !
           Based on the approved design, I'll translate
-          everything into functional code, bullding your
+          everything into functional code, building  your
           website from the ground up."
         >
           <CanvasRevealEffect
