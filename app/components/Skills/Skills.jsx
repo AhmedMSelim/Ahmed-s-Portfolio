@@ -129,7 +129,7 @@ export default function Skills() {
       color: "text-[#16B5B3]",
     },
     {
-      title: "Redux",
+      title: "Redux Toolkit",
       icon: <SiRedux size={30} />,
       color: "text-[#7248B6]",
     },
