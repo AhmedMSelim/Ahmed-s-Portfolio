@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 import { AnimatePresence, motion } from "motion/react";
 import { CanvasRevealEffect } from "./CanvasRevealEffect";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { GoDotFill } from "react-icons/go";
 
 export default function Approach() {
   return (
@@ -129,7 +129,7 @@ const AceternityIcon = ({ order }) => {
           {order}
         </span>
       </button>
-      <FaArrowRightLong
+      <GoDotFill
         size={20}
         className="animate-ping mx-auto mt-2 dark:text-white text-slate-600"
       />
