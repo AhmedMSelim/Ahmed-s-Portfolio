@@ -15,7 +15,7 @@ export default function Social() {
     },
     {
       ico: <CgMail size={30} />,
-      ref: "https://mail.google.com/mail/?view=cm&fs=1&to=ahmedmselim9@gmail.com",
+      ref: "https://mail.google.com/mail/?view=cm&fs=1&to=ahmedsilem.dev@gmail.com",
     },
   ];
   return (

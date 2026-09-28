@@ -124,14 +124,14 @@ export default function Skills() {
       color: "text-[#0076C6]",
     },
     {
+      title: "Bootstrap",
+      icon: <FaBootstrap size={30} />,
+      color: "text-[#8210F5]",
+    },
+    {
       title: "Tailwind CSS",
       icon: <RiTailwindCssFill size={30} />,
       color: "text-[#16B5B3]",
-    },
-    {
-      title: "Redux Toolkit",
-      icon: <SiRedux size={30} />,
-      color: "text-[#7248B6]",
     },
     {
       title: "React",
@@ -152,6 +152,11 @@ export default function Skills() {
       color: "text-[#B6D880]",
     },
     {
+      title: "Redux Toolkit",
+      icon: <SiRedux size={30} />,
+      color: "text-[#7248B6]",
+    },
+    {
       title: "RESTful APIs",
       icon: <AiTwotoneDatabase size={30} />,
       color: "text-[#445762]",
@@ -160,11 +165,6 @@ export default function Skills() {
       title: "Context API",
       icon: <SiModelcontextprotocol size={30} />,
       color: "text-[#F7CA58]",
-    },
-    {
-      title: "Bootstrap",
-      icon: <FaBootstrap size={30} />,
-      color: "text-[#8210F5]",
     },
     {
       title: "Git",

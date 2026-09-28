@@ -61,7 +61,7 @@ Message: ${message}`;
     {
       icon: <MdEmail size={25} className="text-neon-green" />,
       label: "Email",
-      value: "ahmedmselim9@gmail.com",
+      value: "ahmedsilem.dev@gmail.com",
     },
     {
       icon: <FaPhoneFlip size={25} className="text-neon-violet" />,
