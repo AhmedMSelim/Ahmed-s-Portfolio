@@ -133,7 +133,7 @@ export default function Projects() {
       description:
         "E-Commerce Application is a modern online shopping platform designed to let users browse products, manage their cart, and complete purchases seamlessly.",
       image: "/assets/e-commerce.webp",
-      live: "https://e-commerce-beta-beryl.vercel.app/",
+      live: "https://e-commerce-pr9t.vercel.app/",
       git: "https://github.com/AhmedMSelim/E-Commerce.git",
     },
     {
