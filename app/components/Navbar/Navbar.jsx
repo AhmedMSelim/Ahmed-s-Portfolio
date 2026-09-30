@@ -82,7 +82,7 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
             className="dark:bg-neon-green/10 bg-neon-green/30 border border-neon-green/50 px-5 py-2 text-black dark:text-white rounded-full text-sm font-semibold hover:bg-neon-green hover:text-black transition-all shadow-lg shadow-emerald-500/30 hover:shadow-emerald-600/60 cursor-pointer"
           >
-            Hire Me
+            Let's Talk
           </motion.a>
 
           <div className="flex md:hidden">
@@ -146,7 +146,7 @@ export default function Navbar() {
               href="#contact"
               className="w-full inline-block text-center py-5 mt-2 dark:bg-neon-green/50 bg-neon-green/30 border border-neon-green/50 px-5 text-white rounded-full text-sm font-semibold hover:bg-neon-green hover:text-black transition-all shadow-lg shadow-emerald-500/30 hover:shadow-emerald-600/60 cursor-pointer"
             >
-              Hire Me
+              Let's Talk
             </a>
           </div>
         </aside>
