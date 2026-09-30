@@ -7,7 +7,7 @@ import WhatsApp from "./components/WhatsApp/WhatsApp";
 
 export const metadata = {
   title: "Ahmed's Portfolio",
-  description: "Ahmed Magdy | React & Next.js \n Ahmed's Portfolio Fronend Developer",
+  description: "Ahmed Magdy | React & Next.js \n Ahmed's Portfolio Frontend Developer",
 };
 
 export default function RootLayout({ children }) {
