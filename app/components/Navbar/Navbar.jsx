@@ -51,10 +51,10 @@ export default function Navbar() {
           className="text-2xl flex gap-1 items-center font-bold tracking-tighter"
         >
           <SiLichess size={30} className="text-neon-green me-2" />
-          <span className="hidden md:flex text-black dark:text-white">
+          {/* <span className="hidden md:flex text-black dark:text-white">
             Ahmed-
           </span>
-          <span className="text-neon-green">Portfolio</span>
+          <span className="text-neon-green">Portfolio</span> */}
         </motion.a>
 
         <div className="hidden lg:flex gap-8">
