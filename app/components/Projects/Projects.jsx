@@ -110,6 +110,15 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "E-Commerce Application",
+      category: "Web App",
+      description:
+        "E-Commerce Application is a modern online shopping platform designed to let users browse products, manage their cart, and complete purchases seamlessly.",
+      image: "/assets/e-commerce.webp",
+      live: "https://e-commerce-pr9t.vercel.app/",
+      git: "https://github.com/AhmedMSelim/E-Commerce.git",
+    },
+    {
       title: "Social Media Application",
       category: "Web App",
       description:
@@ -126,15 +135,6 @@ export default function Projects() {
       image: "/assets/adasa.webp",
       live: "https://adasa-alpha-nine.vercel.app/",
       git: "https://github.com/AhmedMSelim/Adasa.git",
-    },
-    {
-      title: "E-Commerce Application",
-      category: "Web App",
-      description:
-        "E-Commerce Application is a modern online shopping platform designed to let users browse products, manage their cart, and complete purchases seamlessly.",
-      image: "/assets/e-commerce.webp",
-      live: "https://e-commerce-pr9t.vercel.app/",
-      git: "https://github.com/AhmedMSelim/E-Commerce.git",
     },
     {
       title: "Contact Hub",
